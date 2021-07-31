@@ -1,0 +1,35 @@
+body, html {
+	height: 100%;
+	display: grid;
+}
+
+body {
+	background-color: #000;
+}
+
+/* Quick hack to make the terminal feel fullsize... */
+#term {
+	margin: auto;
+}
+.xterm {
+	padding: 5vw
+}
+
+*::-webkit-scrollbar {
+	width: 20px;
+}
+
+*::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}

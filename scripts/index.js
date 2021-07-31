@@ -3,7 +3,6 @@ const term = new Terminal();
 term.open(document.getElementById("term"));
 term.prompt = "~$ ";
 
-term.writeln('This is a terminal');
 term.writeln('Type \x1B[31mls\x1b[0m to get started');
 term.writeln('');
 

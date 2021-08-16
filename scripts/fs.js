@@ -46,13 +46,12 @@ hl(What I use)
 
 hl(Where you can find me)
 
-- il(DEV Community) (cd dev)
-- il(GitHub) (cd github)`)
-	},
-	github: {
-		'u/r/l': 'https://github.com/SiddharthShyniben'
-	},
-	dev: {
-		'u/r/l': 'https://dev.to/SiddharthShyniben'
+- il(DEV Community) –  hl(cd dev)
+- il(GitHub) – hl(cd github)`)
 	}
 };
+
+const special = {
+	github: () => window.open('https://github.com/SiddharthShyniben'),
+	dev: () => window.open('https://dev.to/SiddharthShyniben')
+}

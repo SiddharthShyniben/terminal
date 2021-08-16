@@ -1,5 +1,5 @@
 class FS {
-	constructor(files = {}, where = '/') {
+	constructor(files = {}, where = '/', special = {}) {
 		this.files = files;
 		this.where = where;
 	}
@@ -17,8 +17,9 @@ class FS {
 	}
 
 	cd(path) {
+		if (special[path]) return special[path]();
 		if (path.startsWith('/')) {
-			this.where = this._normalizePath(path)
+			this.where = this._normalizePath(path);
 			return;
 		}
 		this.where = this._normalizePath(this.where + path + '/');

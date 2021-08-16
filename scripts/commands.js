@@ -25,7 +25,7 @@ const commands = {
 	pwd: term => term.writeln(fs.where),
 	// change directory
 	cd: (_term, args) => {
-		const path = fs.readPath(args);
+		const path = fs.readPath(args) || special[args];
 		if (!path) {
 			term.writeln('No such folder')
 			return;

@@ -44,11 +44,21 @@ class FS {
 
 	_setPath(path, data) {
 		path = this._normalizePath((path.startsWith('/') ? '' : this.where) + path).split('/').filter(Boolean)
-		let temp = this.files;
-		let len = path.length;
-		path.forEach((frag, index) => {
-			if (!temp[frag]) temp[frag] = index === len - 1 ? data : {};
-			temp = temp[frag];
-		});
+		assign(this.files, path, data)
 	}
+}
+
+// Helper
+function assign(obj, prop, value) {
+	if (typeof prop === 'string') prop = prop.split('.');
+
+	if (prop.length > 1) {
+		var e = prop.shift();
+		assign(obj[e] =
+			Object.prototype.toString.call(obj[e]) === '[object Object]'
+			? obj[e]
+			: {},
+			prop,
+			value);
+	} else obj[prop[0]] = value;
 }

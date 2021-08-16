@@ -48,10 +48,21 @@ hl(Where you can find me)
 
 - il(DEV Community) –  hl(cd dev)
 - il(GitHub) – hl(cd github)`)
-	}
+	},
+	projects: {
+		'portfolio.md': hl('This thing. hl(cd source) to view the source code'),
+		'social-image-generator.md': hl('A simple API to return HTML which can then be screenshotted.\n\nCheck it out by running  hl(cd bloggen)'),
+		'dotfiles.md': hl('My dotfile for hl(vim), hl(tmux), hl(zsh) and hl(git).\n\nCheck it out by running  hl(cd dotfiles)'),
+		'js-command-system.md': hl('A command system for JavaScript. Allows you to have stuff like: \n\nhl(// code..)\nhl(foo; // This does something)\n\nCheck it out by running  hl(cd jscmdsys)'),
+	},
 };
 
 const special = {
 	github: () => window.open('https://github.com/SiddharthShyniben'),
-	dev: () => window.open('https://dev.to/SiddharthShyniben')
+	dev: () => window.open('https://dev.to/SiddharthShyniben'),
+	dotfiles: () => window.open('https://github.com/SiddharthShyniben/dotfiles'),
+	source: () => window.open('https://github.com/SiddharthShyniben/SiddharthShyniben.github.io'),
+	bloggen: () => window.open('https://github.com/SiddharthShyniben/social-image-generator'),
+	jscmdsys: () => window.open('https://github.com/SiddharthShyniben/cmd-quiz'),
+	blog: this.dev,
 }

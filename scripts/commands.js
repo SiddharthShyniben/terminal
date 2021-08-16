@@ -66,7 +66,9 @@ const commands = {
 				term.writeln('That\'s a folder, stupid')
 				return;
 			}
-			term.writeln(data || 'No such file, stupid');
+			if (data) data.split('\n').map(line => term.writeln(line))
+			else term.write('No such file, stupid');
+			
 			return;
 		};
 		term.writeln('meow')
